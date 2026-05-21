@@ -147,3 +147,31 @@ create table if not exists dqc_check_detail (
   issue_msg varchar(1024),
   suggestion varchar(1024)
 );
+
+-- ===========================
+-- 表与字段中文注释（建议执行）
+-- ===========================
+comment on table dwd_txn_fact is '标准交易事实表（SCD2），用于分析和校验';
+comment on column dwd_txn_fact.company_name is '公司名称';
+comment on column dwd_txn_fact.currency is '币种';
+comment on column dwd_txn_fact.biz_date is '业务发生日期（Excel: 日期）';
+comment on column dwd_txn_fact.bank_name is '银行名称';
+comment on column dwd_txn_fact.bank_account is '银行账号';
+comment on column dwd_txn_fact.inout_type_code is '收支类型编码';
+comment on column dwd_txn_fact.category_l1_code is '收支大类编码';
+comment on column dwd_txn_fact.category_l2_code is '收支小类编码';
+comment on column dwd_txn_fact.counterparty_bank is '对方银行';
+comment on column dwd_txn_fact.counterparty_account is '对方账号';
+comment on column dwd_txn_fact.remark is '备注';
+comment on column dwd_txn_fact.expense_amt is '支出金额';
+comment on column dwd_txn_fact.income_amt is '收入金额';
+comment on column dwd_txn_fact.allocation_match is '调拨匹配';
+comment on column dwd_txn_fact.created_at is '首次入库时间';
+comment on column dwd_txn_fact.updated_at is '最近修改入库时间';
+comment on column dwd_txn_fact.is_current is '是否当前版本（1是/0否）';
+comment on column dwd_txn_fact.valid_from is '版本生效开始时间';
+comment on column dwd_txn_fact.valid_to is '版本生效结束时间';
+
+comment on table dqc_check_detail is '校验异常明细';
+comment on column dqc_check_detail.issue_msg is '异常原因';
+comment on column dqc_check_detail.suggestion is '修复建议';

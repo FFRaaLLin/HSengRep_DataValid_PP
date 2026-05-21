@@ -11,3 +11,14 @@ Cover a function to validate the data from a new area.
 - Raw full-column Excel ingestion + staged upload precheck + standardized warehouse modeling.
 - Hybrid validation engine: programmatic precheck at upload time and SQL analytical checks after ingestion.
 - Chinese metadata comments on key tables/columns for maintainability.
+
+## Runnable precheck implementation
+- Engine: `src/precheck_engine.py`
+- CLI entry: `src/run_precheck.py`
+- Dependency list: `requirements.txt`
+
+### Quick start
+```bash
+pip install -r requirements.txt
+python src/run_precheck.py --input ./your_data.xlsx --account-rule ./account_rule.xlsx --output ./precheck_issues.xlsx
+```
